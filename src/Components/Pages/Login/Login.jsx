@@ -15,7 +15,7 @@ const Login = () => {
                 </div>
 
                 <div className='flex justify-evenly'>
-                    <div className='grid gap-4 my-24 px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
+                    <div className='grid gap-4 my-28  px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
 
                         <h2 className='justify-center text-2xl font-semibold border-b-2 border-r-2 border-red-500 w-6/12 px-4 rounded-br'>Please Login</h2>
 
