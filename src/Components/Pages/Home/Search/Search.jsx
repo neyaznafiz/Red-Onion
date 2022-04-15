@@ -4,19 +4,17 @@ import bannerbackground from '../../../../Images/bannerbackground.png'
 
 const Search = () => {
     return (
-        <div style={ { backgroundImage: `url(${bannerbackground})`} } className=' bg-i py-60'>
+        <div style={ { backgroundImage: `url(${bannerbackground})`} } className="py-60">
 
 
 
-            <div className='text-center '>
+            <div className='text-center relative'>
                 <h2 className='font-serif text-2xl pb-3'>BEST FOOD WAITING FOR YOUR BELLY</h2>
 
-                <div className='flex justify-center'>
-                    <div className=' rounded-full w-full'>
-                    <input className='rounded-l-full w-3/12 py-1' type="search" name="Search" id="" />
+                <div className='flex justify-center pr-20'>
+                    <input className='rounded-l-full border border-red-500 w-2/12 py-1' type="search" name="Search" id="" />
 
-                    <button className='rounded-full text-white bg-red-500 px-5 py-1'>Search</button>
-                    </div>
+                    <button className='absolute ml-80 rounded-full text-white bg-red-500 px-5 py-1 border border-red-500'>Search</button>
                 </div>
             </div>
 

@@ -6,15 +6,15 @@ import SocialSignin from '../SocialSignin/SocialSignin';
 const Login = () => {
 
     return (
-        <div>
+        <div className=''>
             <div className='py-36 border'>
 
                 <div className='flex justify-center'>
                     <img className='w-64' src={logo2} alt="" />
                 </div>
 
-                <div className='flex justify-evenly'>
-                    <div className='grid gap-4 my-28  px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
+                <div className='flex justify-evenly mt-32 pr-32'>
+                    <div style={{height: '350px'}} className='grid gap-4  px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
 
                         <h2 className='justify-center text-2xl font-semibold border-b-2 border-r-2 border-red-500 w-6/12 px-4 rounded-br'>Please Login</h2>
 
@@ -28,15 +28,16 @@ const Login = () => {
                         <input type="submit" value="Sign Up" className='border rounded bg-red-500 text-white w-96' />
 
                         <Link to='/signup' className='text-center text-red-500 font-semibold'> Are you new heere ?</Link>
+
                     </div>
 
-                    <div className='justify-around py-44 px-16 w-2/6'>
-
-                        <SocialSignin></SocialSignin>
-                    </div>
+                   <div>
+                   <SocialSignin></SocialSignin>
+                   </div>
                 </div>
-
-            </div>
+                </div>
+          
+                  
         </div>
     );
 };

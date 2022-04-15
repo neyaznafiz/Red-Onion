@@ -52,8 +52,8 @@ const SignUp = () => {
                     <img className='w-64' src={logo2} alt="" />
                 </div>
 
-                <div className='flex justify-evenly'>
-                    <div className='grid gap-4 my-16 pb-3 px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
+                <div className='lg:flex lg:justify-evenly mr-36 md:grid'>
+                    <div className='grid gap-4 mt-28 pb-3 px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl'>
 
                         <h2 className='justify-center text-2xl font-semibold border-b-2 border-r-2 border-red-500 w-6/12 py-1 px-4 rounded-br'>Please SignUp</h2>
 
@@ -77,12 +77,12 @@ const SignUp = () => {
                         }
                         </form>
 
-
-
                         <Link to='/login' className='text-center text-red-500 font-semibold'> Already have an account ?</Link>
                     </div>
 
+                    <div className='pt-36'>
                     <SocialSignin></SocialSignin>
+                    </div>
                 </div>
 
             </div>
