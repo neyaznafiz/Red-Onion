@@ -1,16 +1,47 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+
+import { Link, Navigate } from 'react-router-dom';
 import logo2 from '../../../Images/logo2.png'
-import { AiFillGoogleCircle } from 'react-icons/ai'
-import { AiFillTwitterCircle } from 'react-icons/ai'
-import { BsFacebook } from 'react-icons/bs'
-import useSocialHooks from '../../Shared/SocialHooks/useSocialHooks';
+
+import auth from '../../../Firebase/firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { updateProfile } from 'firebase/auth';
+import SocialSignin from '../SocialSignin/SocialSignin';
 
 const SignUp = () => {
 
-    const { signInWithGoogle, signInWithFacebook, signInWithTwitter, user } = useSocialHooks()
+    
 
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+   
+    if (error) {
+        return (
+          <div>
+            <p>Error: {error.message}</p>
+          </div>
+        );
+      }
+      if (loading) {
+        return <p>Loading...</p>;
+      }
     console.log(user);
+
+    const handleSignup = event =>{
+        event.preventDefault()
+        const name = event.target.name.value
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        
+           createUserWithEmailAndPassword(email, password)
+           
+        //    Navigate('/home')
+        
+    }
 
     return (
         <div>
@@ -26,14 +57,15 @@ const SignUp = () => {
 
                         <h2 className='justify-center text-2xl font-semibold border-b-2 border-r-2 border-red-500 w-6/12 py-1 px-4 rounded-br'>Please SignUp</h2>
 
-                        <form className='grid gap-4 justify-center'>
+                        <form onSubmit={handleSignup} className='grid gap-4 justify-center'>
 
-                            <input type="text" name="Name" id="" placeholder='Name' className='border rounded bg-zinc-100 px-2 py-2 w-96' />
-                            <input type="email" name="email" id="" placeholder='Email' className='border rounded bg-zinc-100 px-2 py-2 w-96' />
-                            <input type="password" name="password" id="password" placeholder='Password' className='border rounded bg-zinc-100 px-2 py-2 w-96' />
-                            <input type="password" name="Name" id="confirm-password" placeholder='Confirm Password' className='border rounded bg-zinc-100 px-2 py-2 w-96' />
+                            <input type="text" name="Name" id="" placeholder='Name' className='border rounded bg-zinc-100 px-2 py-2 w-96' required/>
 
-                        </form>
+                            <input type="email" name="email" id="" placeholder='Email' className='border rounded bg-zinc-100 px-2 py-2 w-96' required/>
+
+                            <input type="password" name="password" id="password" placeholder='Password' className='border rounded bg-zinc-100 px-2 py-2 w-96' required />
+
+                            <input type="password" name="Name" id="confirm-password" placeholder='Confirm Password' className='border rounded bg-zinc-100 px-2 py-2 w-96' required />
 
                         {
                             user ?
@@ -43,28 +75,14 @@ const SignUp = () => {
 
 
                         }
+                        </form>
+
 
 
                         <Link to='/login' className='text-center text-red-500 font-semibold'> Already have an account ?</Link>
                     </div>
 
-                    <div className='justify-around py-44 px-16 w-2/6'>
-
-                        <div>
-                            <button onClick={() => signInWithGoogle()} className=' rounded-full flex pl-6 pr-5 py-2 text-white bg-red-500'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
-                        </div>
-
-                        <div className='my-3'>
-                            <button onClick={() => signInWithTwitter()} className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
-                        </div>
-
-                        <div>
-                            <button onClick={() => signInWithFacebook()} className=' rounded-full flex pl-6 pr-9 py-2 text-white bg-red-500'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
-                        </div>
-
-
-
-                    </div>
+                    <SocialSignin></SocialSignin>
                 </div>
 
             </div>
