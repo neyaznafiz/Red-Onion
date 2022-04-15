@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import logo2 from '../../../Images/logo2.png'
-import {FcGoogle} from 'react-icons/fc'
+import { AiFillGoogleCircle } from 'react-icons/ai'
+import { AiFillTwitterCircle } from 'react-icons/ai'
+import { BsFacebook } from 'react-icons/bs'
 
 const SignUp = () => {
     return (
@@ -13,10 +15,10 @@ const SignUp = () => {
                     <img className='w-64' src={logo2} alt="" />
                 </div>
 
-                <div className='flex justify-around'>
-                    <div className='grid justify-center gap-4 py-16 '>
+                <div className='flex justify-evenly'>
+                    <div className='grid gap-4 my-16 pb-3 px-3 ml-36 border-l-2 border-b-2 border-red-500 rounded-bl '>
 
-<h2 className='text-2xl font-semibold border-b-2 border-l-2 border-red-500 w-6/12 py-1 px-2 rounded-bl'>Please SignUp</h2>
+                        <h2 className='justify-center text-2xl font-semibold border-b-2 border-r-2 border-red-500 w-6/12 py-1 px-4 rounded-br'>Please SignUp</h2>
 
                         <form className='grid gap-4 justify-center'>
 
@@ -32,10 +34,22 @@ const SignUp = () => {
                         <Link to='/login' className='text-center text-red-500 font-semibold'> Already have an account ?</Link>
                     </div>
 
-                    <div className='grid gap-4 justify-center py-16 border'>
-                        <button className='border flex px-5 py-2'> <FcGoogle></FcGoogle> Continue witth google</button>
-                        <button className=''> <FcGoogle></FcGoogle> Continue witth google</button>
-                        <button className=''> <FcGoogle></FcGoogle> Continue witth google</button>
+                    <div className='justify-around py-44 px-16 w-2/6'>
+
+                        <div>
+                            <button className=' rounded-full flex pl-6 pr-5 py-2 text-white bg-red-500'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
+                        </div>
+
+                        <div className='my-3'>
+                            <button className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
+                        </div>
+
+                        <div>
+                            <button className=' rounded-full flex pl-6 pr-9 py-2 text-white bg-red-500'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
+                        </div>
+
+
+
                     </div>
                 </div>
 
