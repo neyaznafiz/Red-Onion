@@ -35,13 +35,11 @@ const Login = () => {
 const handleLogin = event => {
     event.preventDefault()
 
-   
     const email = emailRef.current.value
     const password = passwordRef.current.value
 
     signInWithEmailAndPassword(email, password)
 
-    signInWithEmailAndPassword(email, password)
 }
 
     return (
