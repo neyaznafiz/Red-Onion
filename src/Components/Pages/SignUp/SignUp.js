@@ -8,7 +8,7 @@ import useSocialHooks from '../../Shared/SocialHooks/useSocialHooks';
 
 const SignUp = () => {
 
-    const { signInWithGoogle, signInWithFacebook, user } = useSocialHooks()
+    const { signInWithGoogle, signInWithFacebook, signInWithTwitter, user } = useSocialHooks()
 
     console.log(user);
 
@@ -55,7 +55,7 @@ const SignUp = () => {
                         </div>
 
                         <div className='my-3'>
-                            <button className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
+                            <button onClick={() => signInWithTwitter()} className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
                         </div>
 
                         <div>

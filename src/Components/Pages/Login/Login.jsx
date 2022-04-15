@@ -8,7 +8,7 @@ import useSocialHooks from '../../Shared/SocialHooks/useSocialHooks';
 
 const Login = () => {
 
-    const {signInWithGoogle}=useSocialHooks()
+    const {signInWithGoogle, signInWithFacebook}=useSocialHooks()
 
     return (
         <div>
@@ -46,7 +46,7 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <button className=' rounded-full flex pl-6 pr-9 py-2 text-white bg-red-500'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
+                            <button onClick={() => signInWithFacebook()} className=' rounded-full flex pl-6 pr-9 py-2 text-white bg-red-500'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
                         </div>
 
 
