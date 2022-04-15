@@ -1,20 +1,15 @@
-
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth'
 
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDpvvb_YTy8BfxGM26TrS7G6CvgNITwjBA",
-  authDomain: "red-onion-7.firebaseapp.com",
-  projectId: "red-onion-7",
-  storageBucket: "red-onion-7.appspot.com",
-  messagingSenderId: "248338016803",
-  appId: "1:248338016803:web:4b5ac1aed5b28ddb225f96"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app)

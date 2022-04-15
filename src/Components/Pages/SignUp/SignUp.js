@@ -4,8 +4,7 @@ import logo2 from '../../../Images/logo2.png'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
-import useSocialHooks from '../../Shared/useSocialHooks/useSocialHooks';
-import auth from '../../../Firebase/firebase.init';
+import useSocialHooks from '../../Shared/SocialHooks/useSocialHooks';
 
 const SignUp = () => {
 
