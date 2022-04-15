@@ -5,7 +5,7 @@ import {FiShoppingCart} from 'react-icons/fi'
 
 const Header = () => {
     return (
-        <nav className='border flex justify-between bg-gray-50 px-16 py-4'>
+        <nav className='flex justify-between bg-gray-50 px-16 py-4'>
 
             <div>
             <Link to="/">
