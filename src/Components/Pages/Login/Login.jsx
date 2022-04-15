@@ -8,7 +8,7 @@ import useSocialHooks from '../../Shared/SocialHooks/useSocialHooks';
 
 const Login = () => {
 
-    const {signInWithGoogle, signInWithFacebook}=useSocialHooks()
+    const {signInWithGoogle, signInWithFacebook, signInWithTwitter}=useSocialHooks()
 
     return (
         <div>
@@ -42,7 +42,7 @@ const Login = () => {
                         </div>
 
                         <div className='my-3'>
-                            <button className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
+                            <button onClick={()=>signInWithTwitter()} className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white bg-red-500'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
                         </div>
 
                         <div>
