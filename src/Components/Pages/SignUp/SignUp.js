@@ -4,8 +4,14 @@ import logo2 from '../../../Images/logo2.png'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
+import useSocialHooks from '../../Shared/useSocialHooks/useSocialHooks';
+import auth from '../../../Firebase/firebase.init';
 
 const SignUp = () => {
+
+    const {signInWithGoogle}=useSocialHooks()
+
+   
     return (
         <div>
 
@@ -37,7 +43,7 @@ const SignUp = () => {
                     <div className='justify-around py-44 px-16 w-2/6'>
 
                         <div>
-                            <button className=' rounded-full flex pl-6 pr-5 py-2 text-white bg-red-500'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
+                            <button onClick={()=> signInWithGoogle()} className=' rounded-full flex pl-6 pr-5 py-2 text-white bg-red-500'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
                         </div>
 
                         <div className='my-3'>
