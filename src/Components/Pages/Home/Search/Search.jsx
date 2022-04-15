@@ -1,8 +1,12 @@
 import React from 'react';
+import bannerbackground from '../../../../Images/bannerbackground.png'
+// import './Search.css'
 
 const Search = () => {
     return (
-        <div className='py-36 mx-auto bg-orange-100'>
+        <div style={ { backgroundImage: `url(${bannerbackground})`} } className=' bg-i py-60'>
+
+
 
             <div className='text-center '>
                 <h2 className='font-serif text-2xl pb-3'>BEST FOOD WAITING FOR YOUR BELLY</h2>
