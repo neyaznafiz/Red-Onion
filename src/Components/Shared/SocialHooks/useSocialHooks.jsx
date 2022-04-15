@@ -1,13 +1,20 @@
 import React from 'react';
 import auth from '../../../Firebase/firebase.init'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 
 const useSocialHooks = () => {
 
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogel] = useSignInWithGoogle(auth);
 
-    return {signInWithGoogle}
+    const [signInWithFacebook, userFacebook, loadingFacebook, errorFacebook] = useSignInWithFacebook(auth);
+
+    if(userGoogle, userFacebook){
+        console.log(userGoogle);
+        console.log(userFacebook);
+    }
+
+    return {userGoogle, signInWithGoogle, signInWithFacebook}
 };
 
 export default useSocialHooks;
