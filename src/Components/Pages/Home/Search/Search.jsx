@@ -11,8 +11,8 @@ const Search = () => {
             <div className='text-center relative'>
                 <h2 className='font-serif text-2xl pb-3'>BEST FOOD WAITING FOR YOUR BELLY</h2>
 
-                <div className='flex justify-center pr-20'>
-                    <input className='rounded-l-full border border-red-500 w-2/12 py-1' type="search" name="Search" id="" />
+                <div className='flex justify-center pr-12'>
+                    <input className='rounded-l-full border border-red-500 px-20 py-1' type="search" name="Search" id="" />
 
                     <button className='absolute ml-80 rounded-full text-white bg-red-500 px-5 py-1 border border-red-500'>Search</button>
                 </div>
